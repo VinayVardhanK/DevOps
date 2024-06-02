@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+####################################
+#Author: Vinay
+#Date: 06/02
+#
+#This script gives the aws services details :
+#AWS EC2 instances
+#AWS s3 Bucket
+#AWS Lambda
+#AWS IAM Users
+####################################
+
+set -x
+
+echo "list of EC2 instances: "
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
+
+echo "List of s3 buckets: "
+aws s3 ls
+
+echo "List of Lambda functions: "
+aws lambda list-functions
+
+echo "List of IAM users: "
+aws iam list-users
