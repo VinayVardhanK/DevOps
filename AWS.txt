@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 ####################################
-#Author: Vinay
-#Date: 06/02
+#Author: Vinay Vardhan Komaragiri
+#Date: 06/02/24
 #
 #This script gives the aws services details :
 #AWS EC2 instances
@@ -11,7 +11,7 @@
 #AWS IAM Users
 ####################################
 
-set -x
+set -x #debug command
 
 echo "list of EC2 instances: "
 aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
